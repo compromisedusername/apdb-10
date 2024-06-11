@@ -13,21 +13,15 @@ public class ApplicationContext : DbContext
     { }
     
     public DbSet<Doctor> Doctors { get; set; } 
-    public DbSet<Doctor> Medicaments { get; set; } 
-    public DbSet<Doctor> Patients { get; set; } 
-    public DbSet<Doctor> Prescriptions { get; set; } 
-    public DbSet<Doctor> PrescriptionsMedicaments { get; set; }
+    public DbSet<Medicament> Medicaments { get; set; } 
+    public DbSet<Patient> Patients { get; set; } 
+    public DbSet<Prescription> Prescriptions { get; set; } 
+    public DbSet<PrescriptionMedicament> PrescriptionsMedicaments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
-        modelBuilder.Entity<Doctor>().HasData(new List<Doctor>()
-        {
-            new() { }
-        });
-        //todo... 
-
+        
     }
     
 }

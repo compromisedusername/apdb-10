@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication3.Models;
+[Table("medicament")]
 
 public class Medicament
 {
@@ -13,5 +15,6 @@ public class Medicament
     [MaxLength(100)]
     public string Type { get; set; }
 
-    public ICollection<Prescription> Prescriptions { get; set; } = new HashSet<Prescription>();
+    public ICollection<PrescriptionMedicament> PrescriptionMedicaments { get; set; } = new HashSet<PrescriptionMedicament>();
+
 }

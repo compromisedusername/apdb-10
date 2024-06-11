@@ -8,13 +8,19 @@ public class Prescription
 {
     [Key]
     public int IdPrescription { get; set; }
+    
     [Timestamp]
     public string Date { get; set; }
+    
     [Timestamp]
     public string DueDate { get; set; }
-    [MaxLength(100)]
-    public string IdPatient { get; set; }
-    public string IdDoctor { get; set; }
+    
+    /*[ForeignKey(nameof(IdPatient))]
 
-    public ICollection<Medicament> Medicaments { get; set; } = new HashSet<Medicament>();
+    public string IdPatient { get; set; }
+    
+    [ForeignKey(nameof(IdDoctor))]
+    public string IdDoctor { get; set; }*/
+    
+    public ICollection<PrescriptionMedicament> PrescriptionMedicaments { get; set; } = new HashSet<PrescriptionMedicament>();
 }
