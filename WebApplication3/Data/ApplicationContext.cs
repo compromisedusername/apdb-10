@@ -21,7 +21,33 @@ public class ApplicationContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        
+
+        modelBuilder.Entity<Doctor>().HasData(new List<Doctor>
+        {
+            new Doctor()
+            {
+                IdDoctor = 1,
+                FirstName = "Jan",
+                LastName = "Kowalski"
+            },
+            new Doctor()
+            {
+                IdDoctor = 2,
+                FirstName = "Anna",
+                LastName = "Kowalska"
+            }
+        });
+        modelBuilder.Entity<Medicament>().HasData(new List<Medicament>
+        {
+            new Medicament()
+            {
+                
+            },
+            new Medicament()
+            {
+                
+            }
+        });
     }
     
 }
